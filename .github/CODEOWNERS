@@ -2,4 +2,4 @@
 
 # These owners will be the default owners for everything in the repo.
 # Unless a later match takes precedence, @global-owner1 and @global-owner2 will be requested for review.
-* @global-owner1 @global-owner2
+* @global-owner1 @global-owner2 @octo-org/platform-oncall
