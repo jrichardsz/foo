@@ -1,0 +1,21 @@
+name: Human Approval Workflow
+
+on:
+  workflow_dispatch: # Allows you to trigger the workflow manually from the Actions tab
+
+jobs:
+  acme_job:
+    runs-on: ubuntu-latest
+    
+    # Referencing the environment here is what pauses the job for approval
+    # and makes the environment-specific variables available to the steps.
+    environment: Acme
+
+    steps:
+      - name: Acknowledge Approval
+        run: echo "Approval granted! Proceeding with the job."
+
+      - name: Print Environment Variable
+        # Use the 'vars' context to access configuration variables.
+        # If it were a secret, you would use '${{ secrets.FOO_VAR }}' instead.
+        run: echo "The value of FOO_VAR is ${{ vars.FOO_VAR }}"
